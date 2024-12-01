@@ -71,4 +71,9 @@ const validateSortParams = [
     }
 ];
 
-module.exports = { validateBook, validateBookId, validateSearchParams, validateSortParams };
+module.exports = { 
+    validateBook,
+    validateBookId,
+    validateSearchParams,
+    validateSortParams
+};
