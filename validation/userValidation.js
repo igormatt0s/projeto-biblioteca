@@ -14,9 +14,6 @@ const validateUser = [
     body('password')
         .notEmpty().withMessage('A senha é obrigatória.')
         .isLength({ min: 6 }).withMessage('A senha deve ter pelo menos 6 caracteres.'),
-    body('isAdmin')
-        .optional()
-        .isBoolean().withMessage('O atributo "isAdmin" deve ser um valor booleano.'),
     (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
