@@ -44,3 +44,8 @@ exports.getUserById = async (id) => {
 exports.getAllUsers = async () => {
     return await readFile(fileName);
 };
+
+exports.findUserByUsername = async (username) => {
+    const users = await readFile(fileName);
+    return users.find(user => user.username === username);
+};

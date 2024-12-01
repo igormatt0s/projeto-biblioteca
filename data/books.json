@@ -2,7 +2,13 @@
   {
     "id": 1,
     "title": "Senhor dos Anéis",
-    "author": "Tolkien",
-    "year": 1954
+    "author": "J R R Tolkien",
+    "year": 1953
+  },
+  {
+    "id": 2,
+    "title": "Harry Potter",
+    "author": "JK Rowlling",
+    "year": 1997
   }
 ]

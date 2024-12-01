@@ -9,3 +9,5 @@ exports.updateUser = (id, updatedUser) => userModel.updateUser(id, updatedUser);
 exports.deleteUser = (id) => userModel.deleteUser(id);
 
 exports.getUserById = (id) => userModel.getUserById(id);
+
+exports.findUserByUsername = (username) => userModel.findUserByUsername(username);
