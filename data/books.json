@@ -2,13 +2,91 @@
   {
     "id": 1,
     "title": "Senhor dos Anéis",
-    "author": "J R R Tolkien",
-    "year": 1953
+    "author": "J. R. R. Tolkien",
+    "year": 1954
   },
   {
     "id": 2,
-    "title": "Harry Potter",
-    "author": "JK Rowlling",
+    "title": "Harry Potter e a Pedra Filosofal",
+    "author": "J. K. Rowling",
     "year": 1997
+  },
+  {
+    "id": 3,
+    "title": "1984",
+    "author": "George Orwell",
+    "year": 1949
+  },
+  {
+    "id": 4,
+    "title": "Orgulho e Preconceito",
+    "author": "Jane Austen",
+    "year": 1813
+  },
+  {
+    "id": 5,
+    "title": "O Grande Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "year": 1925
+  },
+  {
+    "id": 6,
+    "title": "Dom Quixote",
+    "author": "Miguel de Cervantes",
+    "year": 1605
+  },
+  {
+    "id": 7,
+    "title": "Moby Dick",
+    "author": "Herman Melville",
+    "year": 1851
+  },
+  {
+    "id": 8,
+    "title": "A Revolução dos Bichos",
+    "author": "George Orwell",
+    "year": 1945
+  },
+  {
+    "id": 9,
+    "title": "O Apanhador no Campo de Centeio",
+    "author": "J. D. Salinger",
+    "year": 1951
+  },
+  {
+    "id": 10,
+    "title": "As Crônicas de Nárnia",
+    "author": "C. S. Lewis",
+    "year": 1956
+  },
+  {
+    "id": 11,
+    "title": "O Hobbit",
+    "author": "J. R. R. Tolkien",
+    "year": 1937
+  },
+  {
+    "id": 12,
+    "title": "Cem Anos de Solidão",
+    "author": "Gabriel García Márquez",
+    "year": 1967
+  },
+  {
+    "id": 13,
+    "title": "Crime e Castigo",
+    "author": "Fyodor Dostoevsky",
+    "year": 1866
+  },
+  {
+    "id": 14,
+    "title": "Ulisses",
+    "author": "James Joyce",
+    "year": 1922
+  },
+  {
+    "id": 15,
+    "title": "Guerra e Paz",
+    "author": "Liev Tolstói",
+    "year": 1869
   }
 ]

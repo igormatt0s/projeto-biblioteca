@@ -1,10 +1,19 @@
 const { json } = require('express');
 const bookService = require('../services/bookService');
+const { paginate } = require('../utils/paginationUtils');
 
 exports.getAllBooks = async (req, res) => {
-    const books = await bookService.getAllBooks();
-    res.status(200).json(books);
-}
+    try {
+        const { limite, pagina } = req.query;
+
+        const books = await bookService.getAllBooks();
+        const result = paginate(books, limite, pagina);
+
+        res.status(200).json(result);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+};
 
 exports.getBookById = async (req, res) => {
     const book = await bookService.getBookById(parseInt(req.params.id, 10));

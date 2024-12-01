@@ -1,4 +1,5 @@
 const userService = require('../services/userService');
+const { paginate } = require('../utils/paginationUtils');
 
 exports.registerUser = async (req, res) => {
     const newUser = await userService.registerUser({...req.body, isAdmin: false});
@@ -6,9 +7,17 @@ exports.registerUser = async (req, res) => {
 }
 
 exports.getAllUsers = async (req, res) => {
-    const users = await userService.getAllUsers();
-    res.status(200).json(users);
-}
+    try {
+        const { limite, pagina } = req.query;
+
+        const users = await userService.getAllUsers();
+        const result = paginate(users, limite, pagina);
+
+        res.status(200).json(result);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+};
 
 exports.getUserById = async (req, res) => {
     const { id } = req.user;
