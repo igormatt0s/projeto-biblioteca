@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use('/books', bookRoutes);
 app.use('/users', userRoutes);
-app.use('/api', loanRoutes);
+app.use('/loans', loanRoutes);
 
 app.get('/install', userController.installAdmin);
 

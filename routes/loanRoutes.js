@@ -1,12 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const loanController = require('../controllers/loanController');
-const authMiddleware = require('../middlewares/authMiddleware');
+const { authenticate } = require('../middlewares/authMiddleware');
+const { requireAdmin } = require('../middlewares/adminMiddleware');
+const { validateLoan, validateLoanId } = require('../validation/loanValidation');
 
-router.post('/loans', loanController.createLoan);
-router.get('/loans', loanController.getLoans);
-router.get('/loans/:id', loanController.getLoanById);
-router.put('/loans/:id', loanController.updateLoanStatus);
-router.delete('/loans/:id', loanController.deleteLoan);
+router.get('/', authenticate, loanController.getLoans);
+router.get('/:id', validateLoanId, authenticate, loanController.getLoanById);
+router.post('/', validateLoan, authenticate, loanController.createLoan);
+router.put('/:id', validateLoanId, validateLoan, authenticate, requireAdmin, loanController.updateLoanStatus);
+router.delete('/:id', validateLoanId, authenticate, requireAdmin, loanController.deleteLoan);
 
 module.exports = router;
