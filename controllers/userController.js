@@ -15,7 +15,7 @@ exports.getAllUsers = async (req, res) => {
 
         res.status(200).json(result);
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        next(err);
     }
 };
 
@@ -56,7 +56,7 @@ exports.deleteUser = async (req, res) => {
         const deletedUser = await userService.deleteUser(parseInt(req.params.id, 10));
         res.status(200).json({ message: 'Usuário excluído com sucesso.', user: deletedUser });
     } catch (err) {
-        res.status(500).json({ message: 'Erro ao excluir o usuário.', error: err.message });
+        next(err);
     }
 };
 
@@ -78,7 +78,7 @@ exports.updateUser = async (req, res) => {
 
         res.status(200).json({ message: 'Dados do usuário atualizados com sucesso.', user: updatedUser });
     } catch (err) {
-        res.status(500).json({ message: 'Erro ao atualizar os dados do usuário.', error: err.message });
+        next(err);
     }
 };
 
@@ -106,7 +106,7 @@ exports.installAdmin = async (req, res) => {
         });
     } catch (err) {
         res.status(500).json({
-            message: 'Erro ao criar o usuário administrador.',
+            message: 'Erro ao criar o usuário Admin.',
             error: err.message,
         });
     }
@@ -126,6 +126,6 @@ exports.createAdmin = async (req, res) => {
 
         res.status(200).json({ message: 'Usuário administrador criado com sucesso.', user: createdUser });
     } catch (err) {
-        res.status(500).json({ message: 'Erro ao criar o usuário administrador.', error: err.message });
+        next(err);
     }
 };

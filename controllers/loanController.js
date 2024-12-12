@@ -6,7 +6,7 @@ exports.createLoan = async (req, res) => {
         const newLoan = await loanService.registerLoan(req.body);
         res.status(201).json(newLoan);
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        next(err);
     }
 };
 
@@ -19,7 +19,7 @@ exports.getLoans = async (req, res) => {
 
         res.status(200).json(result);
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        next(err);
     }
 };
 
@@ -31,7 +31,7 @@ exports.getLoanById = async (req, res) => {
         }
         res.status(200).json(loan);
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        next(err);
     }
 };
 
@@ -43,7 +43,7 @@ exports.updateLoanStatus = async (req, res) => {
         }
         res.status(200).json({ message: 'Empréstimo atualizado com sucesso.', loan: updatedLoan });
     } catch (err) {
-        res.status(500).json({ message: 'Erro ao atualizar o empréstimo.', error: err.message });
+        next(err);
     }
 };
 
@@ -55,6 +55,6 @@ exports.deleteLoan = async (req, res) => {
         }
         res.status(200).json({ message: 'Empréstimo excluído com sucesso.', loan: deletedLoan });
     } catch (err) {
-        res.status(500).json({ message: 'Erro ao excluir o empréstimo.', error: err.message });
+        next(err);
     }
 };

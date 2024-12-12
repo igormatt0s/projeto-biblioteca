@@ -5,6 +5,7 @@ const bookRoutes = require('./routes/bookRoutes');
 const userRoutes = require('./routes/userRoutes');
 const loanRoutes = require('./routes/loanRoutes')
 const userController = require('./controllers/userController');
+const errorMiddleware = require('./middlewares/errorMiddleware');
 
 const PORT = process.env.PORT || 3000;
 
@@ -16,6 +17,9 @@ app.use('/users', userRoutes);
 app.use('/loans', loanRoutes);
 
 app.get('/install', userController.installAdmin);
+
+// Última rota -> Tratamento de erros
+app.use(errorMiddleware);
 
 app.listen(PORT, () => {
   console.log(`Servidor funcionando na porta ${PORT}...`);
