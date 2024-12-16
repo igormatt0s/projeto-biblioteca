@@ -1,6 +1,7 @@
 {
     "scripts": {
-        "start": "nodemon app.js"
+        "start": "nodemon app.js",
+        "swagger-autogen": "node docs/swagger.js"
     },
     "keywords": [],
     "author": "",
@@ -11,6 +12,8 @@
         "express-validator": "^7.2.0",
         "jsonwebtoken": "^9.0.2",
         "nodemon": "^3.1.7",
+        "swagger-autogen": "^2.23.7",
+        "swagger-ui-express": "^5.0.1",
         "uuid": "^11.0.3"
     }
 }
