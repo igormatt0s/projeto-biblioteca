@@ -18,12 +18,13 @@ app.use('/loans', loanRoutes);
 
 app.get('/install', userController.installAdmin);
 
+// Documentação
 const swaggerUI = require('swagger-ui-express');
 const swaggerFile = require('./docs/swagger.json');
 
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerFile));
+app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerFile));
 
-// Última rota -> Tratamento de erros
+// Tratamento de erros
 app.use(errorMiddleware);
 
 app.listen(PORT, () => {
